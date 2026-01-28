@@ -29,17 +29,23 @@ body {
     border-radius: 6px;
     margin-bottom: 12px;
     text-align: right;
+    
+    /* Add these */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60px; /* fixed height, adjust as needed */
 }
-
 .previous-value {
     font-size: 14px;
     color: #b0b0b0;
+    height: 18px; /* fixed height so it won't expand */
 }
-
 .current-value {
     font-size: 28px;
     font-weight: bold;
     margin-top: 4px;
+    height: 30px; /* fixed height */
 }
 
 /* Buttons */
