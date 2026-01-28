@@ -1,27 +1,28 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
+/* --- Body and container --- */
 body {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #f4f6f8;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    padding: 40px 0;
 }
 
+.calculator-container {
+    display: flex;
+    position: relative;
+}
+
+/* --- Calculator --- */
 .calculator {
-    width: 320px;
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    padding: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
 }
 
-/* Display */
+/* --- Display --- */
 .display {
     background-color: #000;
     color: #fff;
@@ -29,73 +30,117 @@ body {
     border-radius: 6px;
     margin-bottom: 12px;
     text-align: right;
-    
-    /* Add these */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 60px; /* fixed height, adjust as needed */
+    height: 60px;
 }
+
 .previous-value {
     font-size: 14px;
     color: #b0b0b0;
-    height: 18px; /* fixed height so it won't expand */
+    height: 18px;
 }
+
 .current-value {
     font-size: 28px;
     font-weight: bold;
     margin-top: 4px;
-    height: 30px; /* fixed height */
+    height: 30px;
 }
 
-/* Buttons */
+/* --- Buttons grid --- */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
+/* --- Buttons --- */
 .btn {
-    padding: 16px;
+    padding: 18px;
     font-size: 18px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background-color: #2d2d2d;
+    background-color: #333;
     color: #fff;
-    transition: background-color 0.2s ease;
 }
 
 .btn:hover {
-    background-color: #3a3a3a;
+    background-color: #555;
 }
 
 .btn.operator {
-    background-color: #ff9f0a;
-    color: #000;
+    background-color: #ff9500;
 }
 
 .btn.operator:hover {
-    background-color: #e88f05;
+    background-color: #e08e00;
 }
 
 .btn.equals {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #00b894;
 }
 
-.btn.equals:hover {
-    background-color: #43a047;
+.btn.memory {
+    background-color: #6c63ff;
+}
+
+.btn.memory:hover {
+    background-color: #574fd3;
 }
 
 .btn.clear {
-    background-color: #e53935;
+    background-color: #e74c3c;
 }
 
 .btn.clear:hover {
-    background-color: #d32f2f;
+    background-color: #c0392b;
 }
 
-.btn.zero {
+.btn.history {
+    background-color: #f39c12;
+}
+
+.btn.history:hover {
+    background-color: #e08e0b;
+}
+
+.btn.number.zero {
     grid-column: span 2;
+}
+
+/* --- History panel --- */
+.history-panel {
+    display: none;
+    background-color: #111;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    width: 250px;
+    max-height: 400px;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 320px;
+    /* to the right of calculator */
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.history-panel h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.history-panel ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.history-panel li {
+    padding: 4px 0;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
 }
