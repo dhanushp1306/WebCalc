@@ -11,47 +11,50 @@
 <body>
     <div class="calculator-container">
         <div class="calculator">
+
             <!-- Display -->
             <div class="display">
-                <div class="previous-value">0</div>
-                <div class="current-value">0</div>
+                <div class="previous-value" id="previous-value">0</div>
+                <div class="current-value" id="current-value">0</div>
             </div>
 
             <!-- Buttons Grid -->
             <div class="buttons">
+
                 <!-- Row 1 -->
-                <button class="btn clear">AC</button>
-                <button class="btn operator">÷</button>
-                <button class="btn operator">×</button>
-                <button class="btn operator">−</button>
+                <button class="btn clear" data-action="clear">AC</button>
+                <button class="btn operator" data-operator="/">÷</button>
+                <button class="btn operator" data-operator="*">×</button>
+                <button class="btn operator" data-operator="-">−</button>
 
                 <!-- Row 2 -->
-                <button class="btn number">7</button>
-                <button class="btn number">8</button>
-                <button class="btn number">9</button>
-                <button class="btn operator">+</button>
+                <button class="btn number" data-number="7">7</button>
+                <button class="btn number" data-number="8">8</button>
+                <button class="btn number" data-number="9">9</button>
+                <button class="btn operator" data-operator="+">+</button>
 
                 <!-- Row 3 -->
-                <button class="btn number">4</button>
-                <button class="btn number">5</button>
-                <button class="btn number">6</button>
-                <button class="btn equals">=</button>
+                <button class="btn number" data-number="4">4</button>
+                <button class="btn number" data-number="5">5</button>
+                <button class="btn number" data-number="6">6</button>
+                <button class="btn equals" data-action="equals">=</button>
 
                 <!-- Row 4 -->
-                <button class="btn number">1</button>
-                <button class="btn number">2</button>
-                <button class="btn number">3</button>
+                <button class="btn number" data-number="1">1</button>
+                <button class="btn number" data-number="2">2</button>
+                <button class="btn number" data-number="3">3</button>
                 <button class="btn memory" id="m-plus">M+</button>
 
                 <!-- Row 5 -->
-                <button class="btn number zero">0</button>
-                <button class="btn number">.</button>
+                <button class="btn number zero" data-number="0">0</button>
+                <button class="btn number" data-number=".">.</button>
                 <button class="btn memory" id="m-minus">M-</button>
                 <button class="btn history" id="history-btn">History</button>
 
                 <!-- Row 6 -->
                 <button class="btn memory" id="mr">MR</button>
                 <button class="btn memory" id="mc">MC</button>
+
             </div>
         </div>
 
